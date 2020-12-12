@@ -6,7 +6,7 @@ use std::process::exit;
 
 fn main() {
   let args: Vec<String> = env::args().collect();
-  if &args[1] == "one" {
+  if args.len() == 1 || &args[1] == "one" {
     one_a();
   } else {
     one_b();
@@ -15,9 +15,9 @@ fn main() {
 
 fn one_b() {
   let ints = read_ints();
-  for a in ints {
-    for b in read_ints() {
-      for c in read_ints() {
+  for a in &ints {
+    for b in &ints {
+      for c in &ints {
         if a + b + c == 2020 {
           println!("found it! {} + {} + {} = 2020", a, b, c);
           println!("          {} * {} * {} = {}", a, b, c, a * b * c);
