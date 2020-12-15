@@ -13,4 +13,8 @@
 	echo "day 2 a:"
 	cd 2 && cargo run --quiet one
 
-2: 2a
+2b:
+	echo "day 2 b:"
+	cd 2 && cargo run --quiet two
+
+2: 2a 2b
